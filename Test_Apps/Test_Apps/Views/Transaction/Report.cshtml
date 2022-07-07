@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Test_Apps.Models.Report>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Transaction Report</h1>
+<div class="form-group">
+    <input Name="AcountId" class="form-control" />
+</div>
+<div class="form-group">
+    <input name="Start" class="form-control" />
+</div>
+<div class="form-group">
+    <input name="End" class="form-control" />
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.TransactionDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Debit)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Credit)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Amount)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Convert.ToDateTime(item.TransactionDate).ToString("yyyy-MM-dd")
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Debit)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Credit)
+                    </td>
+                    <td>
+                        @String.Format("{0:N2}", item.Amount)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,6 @@
+dalam aplikasi terdapat :
+ menu customer untuk menambah data data nasabah
+transaction untuk transaksi debit credit 
+point untuk perhitungan point nasabah
+report untuk menampilkan data transaksi
+

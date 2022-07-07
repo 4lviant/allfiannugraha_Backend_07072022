@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Test_Apps.Models.Nasabah>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Customer List</h1>
+
+<p style="text-align:right;margin-right:20px;">
+    <a class="btn btn-outline-primary" asp-action="Create">Create New</a>
+</p>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.AccountId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AccountId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+               
+                <td>
+                    <a asp-action="Edit" class="btn btn-outline-info" asp-route-AccountId="@item.AccountId">Edit</a>
+                    <a asp-action="Delete" class="btn btn-outline-danger" asp-route-AccountId="@item.AccountId">Delete</a>
+                </td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

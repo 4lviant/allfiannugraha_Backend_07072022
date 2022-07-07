@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\alfia\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\alfia\\.nuget\\packages"
+    ]
+  }
+}
