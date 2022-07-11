@@ -20,7 +20,13 @@ Programming Test PT. Padepokan Tujuh Sembilan
 
 restore file Test_apps.bak ke SQL server terdapat 2 table (Nasabah & Transaksi) dan 1 Store Procedure (Reporting)
 buka source Code ini menggunakan Visual Studio 2019
-cek koneksi database di appseting.json rubah/sesuaikan nama server & nama database yg digunakan
+koneksi database di appsetings.json rubah/sesuaikan nama server & nama database yg digunakan
+
+"AllowedHosts": "*",
+  "ConnectionStrings": {   
+      "DB": "Server=<<nama server>>;Initial Catalog=<<nama database>>;Persist Security Info=False;User ID=<<username server>>;Password=<<password server>>;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;"
+  }
+
 jalankan aplikasi di visual studio dengan IIS Express atau bisa menekan tombol "CTRL-F5"
 
 Tampilan Home page (Default)
